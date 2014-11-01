@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Existence;
+    src: url("fonts/existence.otf") format("opentype");
+}
+
+html {
+    font-family: Existence;
+}
+
+header {
+    background-color: rgba(0,0,0,0.5);
+    height: 4em;
+}
+
+.app_title {
+    display: inline-block;
+    width: 10em;
+    height: 4em;
+    line-height: 4em;
+    color: white;
+    background-color: #c0151f;
+    font-weight: bolder;
+    text-align: center;
+    margin-left: 4em;
+    font-size: 1.2em;
+}
