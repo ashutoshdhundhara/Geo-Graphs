@@ -1,7 +1,8 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+error_reporting(E_ERROR|E_PARSE);
+// error_reporting(E_ALL);
+// ini_set('display_errors', '1');
 
 /**
  * Common stuff required by all scripts.

@@ -24,3 +24,14 @@ header {
     margin-left: 4em;
     font-size: 1.2em;
 }
+
+#cy {
+  height: 530px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3em;
+  font: 14px helvetica neue, helvetica, arial, sans-serif;
+  background-color: rgba(0,0,0,0.7);
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
