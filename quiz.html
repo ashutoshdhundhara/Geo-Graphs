@@ -1,0 +1,179 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/cytoscape.min.js"></script>
+        <link href="css/common.css" rel="stylesheet" />
+    </head>
+<style>
+.hide
+{
+display: none;
+}
+</style>
+<script>
+function togglec(id){
+cy.elements('edge').forEach(function(ele, i, eles) { 
+/*
+var dst = ele.id().substring(1,2);
+var srce = ele.id().substring(0,1);
+cy.getElementById(dst).css({'display': 'none'});
+cy.getElementById(srce).css({'display': 'none'});
+*/
+if (ele.id().indexOf(id) == 0) {
+ele.css({'visibility': 'visible'});
+                    var dst = ele.id().substring(1,2);
+                    cy.getElementById(dst).css({'visibility': 'visible'});
+}/*
+var dst = ele.id().replace(id, '');
+if (dst.length === 1) {
+}
+*/
+});
+}
+</script>
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <td>Go Ahead, Reach from Australia to Opera House  !!</td>
+                </tr>
+            </table>
+        </div>
+        <div id="cy"></div>
+    </body>
+    <script>
+        var cy = cytoscape({
+            container: document.getElementById('cy'),
+
+            style: cytoscape.stylesheet()
+            .selector('node')
+              .css({
+                'content': 'data(title)',
+'color' : 'blue',
+                'visibility': 'hidden'
+              })
+            .selector('edge')
+              .css({
+                'target-arrow-shape': 'triangle',
+                'width': 4,
+                'line-color': '#ddd',
+                'target-arrow-color': '#ddd',
+                'visibility': 'hidden'
+              })
+              .selector('node#a')
+              .css({
+                'content': 'data(title)',
+                'color' : 'blue',
+                'visibility': 'visible'
+              })
+            .selector('.highlighted')
+              .css({
+                'background-color': '#61bffc',
+                'line-color': '#61bffc',
+                'target-arrow-color': '#61bffc',
+                'transition-property': 'background-color, line-color, target-arrow-color',
+                'transition-duration': '0.5s'
+              })
+              .selector('node#course')
+                .css({
+                    'width': 76,
+                    'height': 76
+                }),
+
+            elements: {
+          nodes: [
+            { data: { id: 'a', title: 'Australia' } },
+            { data: { id: 'b', title: 'New South Wales' } },
+            { data: { id: 'c', title: 'Tasmania' } },
+            { data: { id: 'd', title: 'South Australia' } },
+            { data: { id: 'e', title: 'Victoria' } },
+            { data: { id: 'f', title: 'Western Australia' } },
+            { data: { id: 'g', title: 'Queensland' } },
+            { data: { id: 'h', title: 'Sydney' } },
+            { data: { id: 'i', title: 'Port Macquire' } },
+            { data: { id: 'j', title: 'Newcastle' } },
+            { data: { id: 'k', title: 'Wagga Wagga' } },
+            { data: { id: 'l', title: 'Orange' } },
+            { data: { id: 'm', title: 'Wollongong' } },
+            { data: { id: 'n', title: 'Religion' } },
+            { data: { id: 'o', title: 'Tourism' } },
+            { data: { id: 'p', title: 'Entertainment' } },
+            { data: { id: 'q', title: 'History' } },
+            { data: { id: 'r', title: 'International Education ' } },
+            { data: { id: 's', title: 'Watson Bay' } },
+            { data: { id: 't', title: 'Opera House' } },
+            { data: { id: 'u', title: 'Harbour Bridge' } },
+            { data: { id: 'v', title: 'Australian Museum' } },
+            
+          ], 
+          edges: [
+            { data: { id: 'ab', weight: 1, source: 'a', target: 'b' } },
+            { data: { id: 'ac', weight: 1, source: 'a', target: 'c' } },
+            { data: { id: 'ad', weight: 1, source: 'a', target: 'd' } },
+            { data: { id: 'ae', weight: 1, source: 'a', target: 'e' } },
+            { data: { id: 'af', weight: 1, source: 'a', target: 'f' } },
+            { data: { id: 'ag', weight: 1, source: 'a', target: 'g' } },
+            { data: { id: 'bh', weight: 1, source: 'b', target: 'h' } },
+            { data: { id: 'bi', weight: 1, source: 'b', target: 'i' } },
+            { data: { id: 'bj', weight: 1, source: 'b', target: 'j' } },
+            { data: { id: 'bk', weight: 1, source: 'b', target: 'k' } },
+            { data: { id: 'bl', weight: 1, source: 'b', target: 'l' } },
+            { data: { id: 'bm', weight: 1, source: 'b', target: 'm' } },
+            { data: { id: 'hn', weight: 1, source: 'h', target: 'n' } },
+            { data: { id: 'ho', weight: 1, source: 'h', target: 'o' } },
+            { data: { id: 'hp', weight: 1, source: 'h', target: 'p' } },
+            { data: { id: 'hq', weight: 1, source: 'h', target: 'q' } },
+            { data: { id: 'hr', weight: 1, source: 'h', target: 'r' } },
+            { data: { id: 'os', weight: 1, source: 'o', target: 's' } },
+            { data: { id: 'ot', weight: 1, source: 'o', target: 't' } },
+            { data: { id: 'ou', weight: 1, source: 'o', target: 'u' } },
+            { data: { id: 'ov', weight: 1, source: 'o', target: 'v' } },
+            
+          ]
+        },
+      
+      layout: {
+        name: 'breadthfirst',
+        directed: true,
+        roots: '#a',
+        padding: 10,
+        boundingBox: undefined,
+        // fit: true,
+        avoidOverlap: false,
+        minNodeSpacing: 10,
+        startAngle: 5/6 * Math.PI, // the position of the first node
+        counterclockwise: false,
+      }
+        });
+        
+        function highlight_path() {
+            var edge_list = [
+                'ab',
+                'bc',
+                'cd'
+            ];
+            var node_list = [
+                'a',
+                'b',
+                'c',
+                'd'
+            ];
+
+            for (var i=0; i<edge_list.length; i++) {
+                cy.elements('edge#' + edge_list[i]).addClass('highlighted');
+            }
+            for (var i=0; i<node_list.length; i++) {
+                cy.elements('node#' + node_list[i]).addClass('highlighted');
+            }
+        }
+        $('#search_btn').click(function (event) {
+            event.preventDefault();
+            if ($('#topic').val() == 'Linear Algebra') {
+                highlight_path();
+            }
+        });
+cy.elements('node').on('tap',function(evt){
+            togglec(evt.cyTarget.id());
+        });
+    </script>
+</html>
