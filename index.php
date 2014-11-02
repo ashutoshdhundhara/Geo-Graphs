@@ -58,7 +58,12 @@ if (isset($_REQUEST['source']) && isset($_REQUEST['type'])) {
                 'target-arrow-color': '#61bffc',
                 'transition-property': 'background-color, line-color, target-arrow-color',
                 'transition-duration': '0.5s'
-              }),
+              })
+            .selector('node#{$_GET['source']}')
+                .css({
+                    'width': 76,
+                    'height': 76    
+                }),
 
             elements: { ";
     $source = $_GET['source'];
@@ -106,7 +111,7 @@ if (isset($_REQUEST['source']) && isset($_REQUEST['type'])) {
         directed: true,
         roots: '{$source}',
         padding: 5,
-        minNodeSpacing: 150
+        minNodeSpacing: 80
       }
         }); cy.elements('node').on('tap', function (evt) {
         handle_click(evt);

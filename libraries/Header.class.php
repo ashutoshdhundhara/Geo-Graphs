@@ -206,7 +206,7 @@ class GG_Header
         $i = 1;
         foreach ($images as $image) {
             $retval .= '.cb-slideshow li:nth-child(' . $i . ') span {'
-            . 'background-image: url(' . $image . '); } ';
+            . 'background-image: url(\'' . $image . '\'); } ';
             $i++;
         }
         $retval .= '</style>';
