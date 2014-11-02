@@ -30,7 +30,9 @@ function handle_click(evt) {
                 });
             }
         });
-    } else {
+    } else if(evt.cyTarget.id() == 'Asia' && source == 'Asia') {	
+		window.location.href = 'index.php?source=Asia-2&type=explore';
+	} else 	{
         window.location.href = 'index.php?source=' + encodeURIComponent(evt.cyTarget.id()) + '&type=information';
     }
 }
