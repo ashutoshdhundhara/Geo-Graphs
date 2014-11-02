@@ -5,6 +5,7 @@
 
 html {
     font-family: Existence;
+    overflow: hidden;
 }
 
 header {
@@ -74,3 +75,17 @@ button:hover {
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
+
+.check_in {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 4em;
+    height: 81%;
+    width: 380px;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+li{
+    padding: 0.5em;

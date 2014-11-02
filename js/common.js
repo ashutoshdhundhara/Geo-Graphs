@@ -45,4 +45,14 @@ $(document).ready(function () {
     $('#information').click(function () {
         window.location.href = 'index.php?source=' + encodeURIComponent(source) + '&type=information';
     });
+
+    $('#more').click(function () {
+        $('.check_in').toggle('slide', {direction: "right"}, 500);
+        $('#cy').toggleClass('moved');
+        if ($('#cy').hasClass('moved')) {
+            $('#cy').animate({'margin-left': '-=30%'}, 500);
+        } else {
+            $('#cy').animate({'margin-left': '+=30%'}, 500);
+        }
+    });
 });

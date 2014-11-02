@@ -20,6 +20,17 @@ if (isset($_REQUEST['show_overlay'])) {
     exit;
 }
 
+if (isset($_REQUEST['save_review'])) {
+    $sql_query = 'INSERT INTO social(`name`, `source`, `review`) VALUES (:name, :source, :review)';
+    $result = $GLOBALS['dbi']->executeQuery($sql_query, array(':name' => $_REQUEST['name'], ':source' => $source, ':review' => $_REQUEST['review']));
+    // $connect=mysql_connect("localhost","root","logMein");
+    // $select=mysql_select_db("GeoGraphs",$connect);
+
+    // $query="INSERT INTO social(`name`, `source`, `review`) values (kartik,kartik,kartik)";
+    // $vertex_list1=mysql_execute($query);
+    
+}
+
 $response = GG_Response::getInstance();
 $header = $response->getHeader();
 $header->setTitle('Home');
@@ -59,7 +70,7 @@ if (isset($_REQUEST['source']) && isset($_REQUEST['type'])) {
                 'transition-property': 'background-color, line-color, target-arrow-color',
                 'transition-duration': '0.5s'
               })
-            .selector('node#{$_GET['source']}')
+            .selector('node#course')
                 .css({
                     'width': 76,
                     'height': 76    
@@ -69,7 +80,7 @@ if (isset($_REQUEST['source']) && isset($_REQUEST['type'])) {
     $source = $_GET['source'];
     $type = $_GET['type'];
 
-    $connect=mysql_connect("localhost","root","");
+    $connect=mysql_connect("localhost","root","logMein");
     $select=mysql_select_db("GeoGraphs",$connect);
 
     //$source = 'a';
@@ -123,6 +134,25 @@ if (isset($_REQUEST['source']) && isset($_REQUEST['type'])) {
     }
     $string .= " var source = '{$source}'; var type = '{$type}'; </script>";
     $html_output .= $string;
+
+    $html_output .= '<form class="check_in" method="POST"><input type="hidden" name="save_review" value="1">';
+
+    $sql_query = 'SELECT * FROM social WHERE source = \'' . $source . '\'';
+    $result = $GLOBALS['dbi']->executeQuery($sql_query, array());
+
+    $html_output .= '<div><textarea name="review" placeholder="Add a review"></textarea></div>'
+        . '<div><input type="text" name="name" placeholder="Enter Your Name"></div>'
+        . '<div><button>Submit</button></div>';
+    if ($result->rowCount() > 0) {
+        $html_output .= '<div style="font-weight: bolder; color: #c0151f">What others are saying about ' . $source . '</div>'
+            . '<ul class="reviews" style="font-size: 1.2em;">';
+        while ($row = $result->fetch()) {
+            $html_output .= '<li><i>' . $row . '</i> says ' .$row['review'] . '</li>';
+        }
+        $html_output .= '</ul>';
+    }
+
+    $html_output .= '<a href="external_links.php?source=' .$source . '">External Links: </a>' . '</form>' ;
 }
 
 $response->addHTML($html_output);
