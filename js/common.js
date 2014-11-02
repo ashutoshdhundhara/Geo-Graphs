@@ -55,4 +55,7 @@ $(document).ready(function () {
             $('#cy').animate({'margin-left': '+=30%'}, 500);
         }
     });
+    $('#quiz').click(function () {
+        window.location.href = 'quiz.html';
+    });
 });

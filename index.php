@@ -36,7 +36,7 @@ $header = $response->getHeader();
 $header->setTitle('Home');
 $html_output = '';
 
-$html_output .= '<div id="cy"></div>';
+$html_output .= '<div id="cy">';
 
 if (isset($_REQUEST['source']) && isset($_REQUEST['type'])) {
     $html_output .= "<script>
@@ -153,6 +153,12 @@ if (isset($_REQUEST['source']) && isset($_REQUEST['type'])) {
     }
 
     $html_output .= '<a href="external_links.php?source=' .$source . '">External Links: </a>' . '</form>' ;
+} else {
+    $html_output .= '<form method="GET" id="search_form">'
+        . '<input type="hidden" name="type" value="explore">'
+        . '<input type="text" name="source">'
+        . '<button>Search</button>'
+        . '</form></div>';
 }
 
 $response->addHTML($html_output);

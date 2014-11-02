@@ -49,6 +49,7 @@ class GG_Footer
                 . '<button id="explore">Explore</button>'
                 . '<button id="information">Information</button>'
                 . '<button id="more">More!</button>'
+                . '<button id="quiz">Quiz</button>'
                 .'</footer>';
             $retval .= '</body></html>';
         }

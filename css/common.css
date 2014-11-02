@@ -89,3 +89,10 @@ button:hover {
 
 li{
     padding: 0.5em;
+}
+
+#search_form {
+    margin: 0 auto;
+    width: 400px;
+    padding-top: 14em;
+}
