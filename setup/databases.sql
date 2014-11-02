@@ -99,7 +99,11 @@ INSERT INTO `edge_list` (`Source`, `Destination`, `Relation`) VALUES
 ('Kerala', 'Clothing', 'information'),
 ('Kerala', 'Flora and Fauna', 'information'),
 ('Kerala', 'World Famous Items', 'information');
-
+('Music and Dance', 'Kathakali', 'information'),
+('Music and Dance', 'Koodiyatton', 'information'),
+('Music and Dance', 'Carnatic Music', 'information'),
+('Music and Dance', 'Vadakkan Patukal', 'information'),
+('Music and Dance', 'Margamkali', 'information');
 
 
 
@@ -155,6 +159,13 @@ INSERT INTO `entity_information` (`source`, `destination`, `html`) VALUES
 ('Sydney', 'History', 'The History of Sydney begins in prehistoric times with the occupation of the district by Australian Aborigines, whose ancestors came to Australia between 15,000 and 45,000 years ago. The modern history of the city began with the arrival of a First Fleet of British ships in 1788 and the foundation of a penal colony by Great Britain.<br />\r\n\r\nSydney established an elected city council in 1840 and was from 1788-1900 the capital of the British colony of New South Wales. In 1901, Sydney became a state capital, when New South Wales voted to join the Australian Federation. Sydney today is Australia''s largest city and a major international capital of culture and finance. The city has played host to many international events, including the 2000 Summer Olympics.<br />\r\n'),
 ('Tourism', 'Opera House', '\r\n<img src="images/Sydney-Opera-House-Quiz.jpg" alt="The Sydney Opera House is a multi-venue performing arts centre in Sydney, New South Wales, Australia.">\r\n<br/>The Sydney Opera House is a multi-venue performing arts centre in Sydney, New South Wales, Australia.'),
 ('Tourism', 'Harbour Bridge', '\r\n<img src="images/harbour-bridge-1718.jpg" >\r\n<br />The Sydney Harbour Bridge is a steel through arch bridge across Sydney Harbour that carries rail, vehicular, bicycle and pedestrian traffic between the Sydney central business district and the North Shore.');
+('Music and Dance', 'Kathakali', 'Video showing artists performing Kathakali, a traditional dance form from Kerala.<br/>\r\n<video width="320" height="240" controls>  <source src="videos/kathakali.mp4" type="video/mp4"><source src="movie.ogg" type="video/ogg">Your browser does not support the video tag.</video>'),
+('Kerala', 'Flora and Fauna', '<img src = "images/kerala_flora_and_fauna.jpg">\r\n<br/>\r\nA tiger from Wynad Wildlife Sanctuary.<br/>\r\n<ul>\r\n	<li>Kerala had 6 National Parks, 2 Biosphere Reserves and 2 tiger reserves.</li>\r\n	<li>There are also numerous protected conservation areas, including 1455.4 km² of the vast Nilgiri Biosphere Reserve.</li>\r\n	<li>Forests play host to such major fauna as the Asian elephant (Elephas maximus), Bengal tiger (Panthera tigris tigris), leopard (Panthera pardus)</li>\r\n</ul>'),
+('Kerala', 'World Famous Items', 'Things to buy for sure when you visit Kerala : <br/>\r\n<ul>\r\n	<li>Banana chips!</li>\r\n	<li>Spices!</li>\r\n	<li>Famous Wooden "Kathakali" Face :D</li>\r\n</ul>\r\n<img src = "images/kerala_banana_chips.jpg" style = "height : 200px; width : 300px" ><br/>\r\nThe world famous banana chips are a must buy in Kerala!'),
+('India', 'Etymology', 'The name India is derived from Indus, which originates from the Old Persian word Hinduš. The latter term stems from the Sanskrit word Sindhu, which was the historical local appellation for the Indus River.The ancient Greeks referred to the Indians as Indoi (?????), which translates as "the people of the Indus".'),
+('India', 'Festivals', 'India is also known as the land of festivals!\r\nDiwali, Holi, Eid, etc. all are celebrated with equal enthusiasm across<br/>\r\nthe country!\r\nMajor festivals include : \r\n<ul>\r\n	<li>Diwali</li>\r\n	<li>Holi</li>\r\n	<li>Eid</li>\r\n	<li>Navratri</li>\r\n	<li>Rakshabandhan</li>\r\n</ul>\r\n<br/>\r\n<img src = "images/india_festivals.jpg" style = "height : 200; width : 300"><br/>\r\nKite flying festival during Uttarayan in Gujarat in India.<br/>'),
+('Asia', 'Climate', 'The most active place on Earth for tropical cyclone activity lies northeast of the Philippines and south of Japan. The Gobi Desert is in Mongolia and the Arabian Desert stretches across much of the Middle East. The Yangtze River in China is the longest river in the continent. The Himalayas between Nepal and China is the tallest mountain range in the world. Tropical rainforests stretch across much of southern Asia and coniferous and deciduous forests lie farther north.'),
+('Asia', 'Modern Conflicts', 'The region has always been prone to poilitical tensions.\r\n<br/>\r\nSome of the recent ones are : \r\n<ul>\r\n	<li>The Israeli–Palestinian conflict</li>\r\n	<li>The Syrian Civil War</li>\r\n	<li>The Sino-Indian War</li>\r\n	<li>The 2014 Thai coup d''état</li>\r\n	<li>The Islamic State of Iraq and the Levant</li>\r\n</ul>\r\n<img src = "images/asia_gaza.jpg" style = "height : 200; width : 400">\r\n<br/>\r\nRecent Gaza conflit in the region has caught the world''s attention');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
