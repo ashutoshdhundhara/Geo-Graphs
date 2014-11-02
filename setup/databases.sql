@@ -30,7 +30,7 @@ CREATE TABLE `edge_list` (
 -- Dumping data for table `edge_list`
 --
 
-INSERT INTO `edge_list` (`Source`, `Destination`, `Relation`) VALUES
+INSERT INTO `edge_list` (`Source`, `Destination`, `type`) VALUES
 ('Australia', 'Climate', 'information'),
 ('Australia', 'History', 'information'),
 ('Australia', 'Etymology', 'information'),
@@ -104,6 +104,14 @@ INSERT INTO `edge_list` (`Source`, `Destination`, `Relation`) VALUES
 ('Music and Dance', 'Carnatic Music', 'information'),
 ('Music and Dance', 'Vadakkan Patukal', 'information'),
 ('Music and Dance', 'Margamkali', 'information');
+('United States', 'Etymology', 'information'),
+('United States', 'History', 'information'),
+('United States', 'Climate', 'information'),
+('United States', 'New York City', 'explore'),
+('United States', 'Los Angeles', 'explore'),
+('United States', 'Los Angeles', 'explore'),
+('United States', 'Dallas–Fort Worth', 'explore'),
+('United States', 'Washington, D.C.', 'explore');
 
 
 
