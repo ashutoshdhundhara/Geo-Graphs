@@ -228,4 +228,10 @@ INSERT INTO `entity_images` (`name`, `image`) VALUES
 ('India', 'images/india-3.jpg'),
 ('Kerala', 'images/kerala-1.jpg'),
 ('Kerala', 'images/kerala-2.jpg'),
-('Kerala', 'images/kerala-3.jpg');
+('Kerala', 'images/kerala-3.jpg'),
+('Tourism', 'tourism-1.jpg'),
+('Tourism', 'tourism-2.jpg'),
+('Tourism', 'tourism-3.jpg'),
+('Music and Dance', 'music and dance-1.jpg'),
+('Music and Dance', 'music and dance-2.jpg'),
+('Music and Dance', 'music and dance-3.jpg');
