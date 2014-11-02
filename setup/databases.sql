@@ -170,3 +170,54 @@ INSERT INTO `entity_information` (`source`, `destination`, `html`) VALUES
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- phpMyAdmin SQL Dump
+-- version 4.0.6
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 02, 2014 at 02:42 AM
+-- Server version: 5.5.33
+-- PHP Version: 5.5.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `geographs`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `entity_images`
+--
+
+CREATE TABLE `entity_images` (
+  `name` varchar(50) NOT NULL,
+  `image` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `entity_images`
+--
+
+INSERT INTO `entity_images` (`name`, `image`) VALUES
+('Australia', 'images/australia-1.jpg'),
+('Australia', 'images/australia-2.jpg'),
+('Australia', 'images/australia-4.jpg'),
+('New South Wales', 'images/new south wales-1.jpg'),
+('New South Wales', 'images/new south wales-2.jpg'),
+('New South Wales', 'images/new south wales-3.jpg'),
+('Sydney', 'images/sydney-1.jpg'),
+('Sydney', 'images/sydney-2.jpg'),
+('Sydney', 'images/sydney-3.jpg'),
+('Asia', 'images/asia-1.jpg'),
+('Asia', 'images/asia-2.jpg'),
+('Asia', 'images/asia-3.jpg'),
+('India', 'images/india-1.jpg'),
+('India', 'images/india-2.jpg'),
+('India', 'images/india-3.jpg'),
+('Kerala', 'images/kerala-1.jpg'),
+('Kerala', 'images/kerala-2.jpg'),
+('Kerala', 'images/kerala-3.jpg');
