@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 01, 2014 at 11:00 PM
+-- Generation Time: Nov 02, 2014 at 12:25 AM
 -- Server version: 5.5.33
 -- PHP Version: 5.5.3
 
@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `Geo-Graphs`
+-- Database: `geographs`
 --
 
 -- --------------------------------------------------------
@@ -23,14 +23,14 @@ SET time_zone = "+00:00";
 CREATE TABLE `edge_list` (
   `Source` varchar(50) NOT NULL,
   `Destination` varchar(50) NOT NULL,
-  `Relation` varchar(50) NOT NULL DEFAULT 'information'
+  `type` varchar(50) NOT NULL DEFAULT 'information'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `edge_list`
 --
 
-INSERT INTO `edge_list` (`Source`, `Destination`, `Relation`) VALUES
+INSERT INTO `edge_list` (`Source`, `Destination`, `type`) VALUES
 ('Australia', 'Climate', 'information'),
 ('Australia', 'History', 'information'),
 ('Australia', 'Etymology', 'information'),
@@ -98,4 +98,9 @@ INSERT INTO `edge_list` (`Source`, `Destination`, `Relation`) VALUES
 ('Kerala', 'Music and Dance', 'information'),
 ('Kerala', 'Clothing', 'information'),
 ('Kerala', 'Flora and Fauna', 'information'),
-('Kerala', 'World Famous Items', 'information');
+('Kerala', 'World Famous Items', 'information'),
+('Music and Dance', 'Kathakali', 'information'),
+('Music and Dance', 'Koodiyatton', 'information'),
+('Music and Dance', 'Carnatic Music', 'information'),
+('Music and Dance', 'Vadakkan Patukal', 'information'),
+('Music and Dance', 'Margamkali', 'information');
