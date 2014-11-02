@@ -45,6 +45,11 @@ class GG_Footer
         $retval = '';
         if ($this->_isEnabled) {
             $retval .= '</div></div>';
+            $retval .= '<footer>'
+                . '<button id="explore">Explore</button>'
+                . '<button id="information">Information</button>'
+                . '<button id="more">More!</button>'
+                .'</footer>';
             $retval .= '</body></html>';
         }
 

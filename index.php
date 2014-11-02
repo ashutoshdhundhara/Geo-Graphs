@@ -8,6 +8,18 @@
  */
 require_once 'libraries/common.inc.php';
 
+if (isset($_REQUEST['show_overlay'])) {
+    $sql_query = 'SELECT html FROM entity_information WHERE source = \'' . $_REQUEST['src'] . '\' AND destination = \'' . $_REQUEST['dst_node'] . '\'';
+    $result = $GLOBALS['dbi']->executeQuery($sql_query, array());
+    if ($result->rowCount() == 0) {
+        echo '<div>Sorry, no further data available.</div>';
+    } else {
+        $row = $result->fetch();
+        echo $row['html'];
+    }
+    exit;
+}
+
 $response = GG_Response::getInstance();
 $header = $response->getHeader();
 $header->setTitle('Home');
@@ -52,7 +64,7 @@ if (isset($_REQUEST['source']) && isset($_REQUEST['type'])) {
     $source = $_GET['source'];
     $type = $_GET['type'];
 
-    $connect=mysql_connect("localhost","root","root");
+    $connect=mysql_connect("localhost","root","logMein");
     $select=mysql_select_db("GeoGraphs",$connect);
 
     //$source = 'a';
@@ -96,7 +108,15 @@ if (isset($_REQUEST['source']) && isset($_REQUEST['type'])) {
         padding: 5,
         minNodeSpacing: 150
       }
-        }); }); </script>";
+        }); cy.elements('node').on('tap', function (evt) {
+        handle_click(evt);
+    }); }); ";
+    if ($type == 'information') {
+        $string .= ' var show_overlay = true; ';
+    } else {
+        $string .= ' var show_overlay = false; ';
+    }
+    $string .= " var source = '{$source}'; var type = '{$type}'; </script>";
     $html_output .= $string;
 }
 

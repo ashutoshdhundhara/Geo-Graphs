@@ -196,13 +196,17 @@ class GG_Header
 
         $retval .= $link;
 
-        $images = array('1.jpg', '2.jpg', '3.jpg', '4.jpg');
+        $sql_query = 'SELECT * FROM entity_images WHERE name = \'' . $_REQUEST['source'] . '\'';
+        $result = $GLOBALS['dbi']->executeQuery($sql_query, array());
+        while($row = $result->fetch()) {
+            $images[] = $row['image'];
+        }
 
         $retval .= '<style>';
         $i = 1;
         foreach ($images as $image) {
-            $retval .= 'cb-slideshow li:nth-child(' . $i . ') span {'
-            . 'background-image: url(../images/' . $image . '); } ';
+            $retval .= '.cb-slideshow li:nth-child(' . $i . ') span {'
+            . 'background-image: url(' . $image . '); } ';
             $i++;
         }
         $retval .= '</style>';
@@ -368,7 +372,6 @@ class GG_Header
 
     public function getSlideshowImages() {
         $retval = '<ul class="cb-slideshow">
-            <li><span></span><div><h3>Lorem ipsum</h3></div></li>
             <li><span></span><div><h3>Lorem ipsum</h3></div></li>
             <li><span></span><div><h3>Lorem ipsum</h3></div></li>
             <li><span></span><div><h3>Lorem ipsum</h3></div></li>
