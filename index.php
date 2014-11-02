@@ -64,7 +64,7 @@ if (isset($_REQUEST['source']) && isset($_REQUEST['type'])) {
     $source = $_GET['source'];
     $type = $_GET['type'];
 
-    $connect=mysql_connect("localhost","root","logMein");
+    $connect=mysql_connect("localhost","root","");
     $select=mysql_select_db("GeoGraphs",$connect);
 
     //$source = 'a';
